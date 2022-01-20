@@ -1,0 +1,18 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.etch-grid {
+    display: grid;
+    grid-template: repeat(16, 1fr) / repeat(16, 1fr);
+    width: 30rem;
+    height: 30rem;
+    grid-gap: 1px;
+    background-color: black;
+}
+
+.grid-item {
+    background-color: gold;
+}
