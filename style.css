@@ -4,7 +4,7 @@ body {
     align-items: center;
 }
 
-.etch-grid {
+.etch-grid-container {
     display: grid;
     grid-template: repeat(16, 1fr) / repeat(16, 1fr);
     width: 30rem;
@@ -13,6 +13,6 @@ body {
     background-color: black;
 }
 
-.grid-item {
+.highlighted-item {
     background-color: gold;
 }
