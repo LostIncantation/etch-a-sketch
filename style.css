@@ -5,13 +5,17 @@
     align-items: center;
 }
 */
-.input-area {
+form {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    padding: 2rem;
+    padding: 1rem;
+}
+
+label {
+    padding: 0.5rem;
 }
 
 .etch-area {
