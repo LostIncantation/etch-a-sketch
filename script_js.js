@@ -1,4 +1,8 @@
 const etchContainer = document.querySelector(".etch-grid-container")
+/*
+const clearGridButton = document.querySelector("#clear-grid-button");
+const setGridSizeButton = document.querySelector("#set-grid-size-button");
+*/
 
 /*
     Fills a grid container with the relevant number of pixels
@@ -6,8 +10,7 @@ const etchContainer = document.querySelector(".etch-grid-container")
 function fillGridContainer(gridPixels){
     console.log(gridPixels);
     etchContainer.style.gridTemplate = `repeat(${gridPixels}, 1fr) / repeat(${gridPixels}, 1fr)`;
-    console.log("Ran");
-
+    
     const gridPixel = document.createElement("DIV");
     gridPixel.className = 'grid-pixel';
     let i = 0;
@@ -49,4 +52,9 @@ function highlightGrid(){
     this.style.backgroundColor = "gold";
 }
 
+function handlerFunction(){
+    console.log('Handled');
+}
+
 fillGridContainer(16);
+
