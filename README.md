@@ -15,4 +15,4 @@ css 2.1
 Open the html page in a browser. Tested in Chrome Version 97.0.4692.71.
 
 ## Project Status
-v0 in progress
+v1.0 complete
