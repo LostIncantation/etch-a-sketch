@@ -23,7 +23,7 @@ label {
     justify-content: center;
     align-items: center;
 }
-.pixel-grid-container {
+.etch-grid-container {
     display: grid;
     width: 30rem;
     height: 30rem;
