@@ -23,7 +23,7 @@ function fillGridContainer(){
     gridPixel.className = 'grid-pixel';
     let i = 0;
     let gridPixelsArray = [];
-    let i = 0;
+
     while(i<gridPixels*gridPixels){
         let newGridPixel = document.createElement("DIV");
         newGridPixel.className = "grid-pixel";
@@ -34,17 +34,13 @@ function fillGridContainer(){
 
     let j = 0;
     while (j<gridPixelsArray.length){
-        pixelContainer.appendChild(gridPixelsArray[j]);
+        etchContainer.appendChild(gridPixelsArray[j]);
         console.log('Appending div');
         j++;
     }
 
-    /*
-        Calls function to add listeners to allow pixel colour to be changed
-    */
     addEtchColouring();
 }
-
 
 /*
     Targets every element of code with ".grid-pixel" and adds an event listener
@@ -68,4 +64,3 @@ function clearGrid(){
 }
 
 fillGridContainer();
-
