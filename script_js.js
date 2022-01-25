@@ -42,6 +42,7 @@ function fillGridContainer(){
     addEtchColouring();
 }
 
+
 /*
     Targets every element of code with ".grid-pixel" and adds an event listener
     which activates highlightGrid()
@@ -64,3 +65,4 @@ function clearGrid(){
 }
 
 fillGridContainer();
+
