@@ -1,16 +1,27 @@
-const pixelContainer = document.querySelector(".pixel-grid-container")
+const etchContainer = document.querySelector(".etch-grid-container")
+console.log(document.getElementById("grid-size").value);
+/*
+const clearGridButton = document.querySelector("#clear-grid-button");
+const setGridSizeButton = document.querySelector("#set-grid-size-button");
+*/
+
 /*
     Fills a grid container with the relevant number of pixels
 */
-function fillGridContainer(gridPixels){
-    //Format pixelContainer according to the number of divs it will be populated with
-    pixelContainer.style.gridTemplate = `repeat(${gridPixels}, 1fr) / repeat(${gridPixels}, 1fr)`;
+function fillGridContainer(){
+    etchContainer.innerHTML="";
 
-    /*
-        Create an array and populate it based on how many pixels the grid will require.
-        Note: the newGridPixel id is important as current version of "appendChild" will
-        not append identical divs
-    */
+    let gridPixels=document.getElementById("grid-size").value;
+    if(!gridPixels){
+        gridPixels = 16;
+    }
+
+    console.log(gridPixels);
+    etchContainer.style.gridTemplate = `repeat(${gridPixels}, 1fr) / repeat(${gridPixels}, 1fr)`;
+    
+    const gridPixel = document.createElement("DIV");
+    gridPixel.className = 'grid-pixel';
+    let i = 0;
     let gridPixelsArray = [];
     let i = 0;
     while(i<gridPixels*gridPixels){
@@ -21,9 +32,6 @@ function fillGridContainer(gridPixels){
         i++
     }
 
-    /*
-        Takes elements of gridPixelsArray and appends them to the pixelContainer
-    */
     let j = 0;
     while (j<gridPixelsArray.length){
         pixelContainer.appendChild(gridPixelsArray[j]);
@@ -54,15 +62,10 @@ function highlightGrid(){
     this.style.backgroundColor = "gold";
 }
 
-/*
 function clearGrid(){
-    const clearTarget = document.querySelectorAll(".grid-pixel");
-    clearTarget.forEach(element => {
-        this.style.backgroundColor = "black";    
-    });
+    etchContainer.innerHTML="";
+    fillGridContainer();
 }
-*/
 
-fillGridContainer(16);
-//const gridClearButton = document.querySelector(".clear-grid")
-//gridClearButton.addEventListener("click", clearGrid);
+fillGridContainer();
+
