@@ -1,4 +1,5 @@
 const etchContainer = document.querySelector(".etch-grid-container")
+console.log(document.getElementById("grid-size").value);
 /*
 const clearGridButton = document.querySelector("#clear-grid-button");
 const setGridSizeButton = document.querySelector("#set-grid-size-button");
@@ -7,7 +8,14 @@ const setGridSizeButton = document.querySelector("#set-grid-size-button");
 /*
     Fills a grid container with the relevant number of pixels
 */
-function fillGridContainer(gridPixels){
+function fillGridContainer(){
+    etchContainer.innerHTML="";
+
+    let gridPixels=document.getElementById("grid-size").value;
+    if(!gridPixels){
+        gridPixels = 16;
+    }
+
     console.log(gridPixels);
     etchContainer.style.gridTemplate = `repeat(${gridPixels}, 1fr) / repeat(${gridPixels}, 1fr)`;
     
@@ -23,7 +31,6 @@ function fillGridContainer(gridPixels){
         gridPixelsArray.push(newGridPixel);
         i++
     }
-
 
     let j = 0;
     while (j<gridPixelsArray.length){
@@ -52,9 +59,10 @@ function highlightGrid(){
     this.style.backgroundColor = "gold";
 }
 
-function handlerFunction(){
-    console.log('Handled');
+function clearGrid(){
+    etchContainer.innerHTML="";
+    fillGridContainer();
 }
 
-fillGridContainer(16);
+fillGridContainer();
 

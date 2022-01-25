@@ -9,13 +9,13 @@
 
     <body>
         <div class="input-area">
-            <form id="grid-control" onsubmit="handlerFunction(); return false;">
+            <form id="grid-control" onsubmit="return false;"> <!--onsubmit="fillGridContainer(this);-->
                 <label for="grid-size">Choose Grid Size (1 to 100)</label>
                 <input type="text" id="grid-size" name="grid-size">
-                <input type="submit" value="Enter" id="set-grid-size-button">
+                <input type="button" value="Enter" id="set-grid-size-button" onclick="fillGridContainer();"></button>
             </form>
             <form id="clear-control">
-                <input type="submit" value="Clear Grid" id="clear-grid-button">
+                <input type="button" value="Clear Grid" id="clear-grid-button" onclick="clearGrid()">
             </form>
         </div>
         <div class="etch-area">
