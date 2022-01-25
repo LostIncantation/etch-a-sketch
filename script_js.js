@@ -1,5 +1,4 @@
 const etchContainer = document.querySelector(".etch-grid-container")
-console.log(document.getElementById("grid-size").value);
 /*
 const clearGridButton = document.querySelector("#clear-grid-button");
 const setGridSizeButton = document.querySelector("#set-grid-size-button");
@@ -9,37 +8,38 @@ const setGridSizeButton = document.querySelector("#set-grid-size-button");
     Fills a grid container with the relevant number of pixels
 */
 function fillGridContainer(){
-    etchContainer.innerHTML="";
-
     let gridPixels=document.getElementById("grid-size").value;
     if(!gridPixels){
         gridPixels = 16;
-    }
+    };
 
-    console.log(gridPixels);
-    etchContainer.style.gridTemplate = `repeat(${gridPixels}, 1fr) / repeat(${gridPixels}, 1fr)`;
-    
-    const gridPixel = document.createElement("DIV");
-    gridPixel.className = 'grid-pixel';
-    let i = 0;
-    let gridPixelsArray = [];
+    if(isNaN(gridPixels) || gridPixels <= 0 || gridPixels > 100){
+        window.alert('Invalid Input');
+    } else {
+        etchContainer.innerHTML="";
+        etchContainer.style.gridTemplate = `repeat(${gridPixels}, 1fr) / repeat(${gridPixels}, 1fr)`;
+        
+        const gridPixel = document.createElement("DIV");
+        gridPixel.className = 'grid-pixel';
+        let i = 0;
+        let gridPixelsArray = [];
 
-    while(i<gridPixels*gridPixels){
-        let newGridPixel = document.createElement("DIV");
-        newGridPixel.className = "grid-pixel";
-        newGridPixel.id = `grid-pixel-${i}`;
-        gridPixelsArray.push(newGridPixel);
-        i++
-    }
+        while(i<gridPixels*gridPixels){
+            let newGridPixel = document.createElement("DIV");
+            newGridPixel.className = "grid-pixel";
+            newGridPixel.id = `grid-pixel-${i}`;
+            gridPixelsArray.push(newGridPixel);
+            i++
+        }
 
-    let j = 0;
-    while (j<gridPixelsArray.length){
-        etchContainer.appendChild(gridPixelsArray[j]);
-        console.log('Appending div');
-        j++;
-    }
+        let j = 0;
+        while (j<gridPixelsArray.length){
+            etchContainer.appendChild(gridPixelsArray[j]);
+            j++;
+        }
 
-    addEtchColouring();
+        addEtchColouring();
+        }
 }
 
 /*
