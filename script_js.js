@@ -19,8 +19,6 @@ function fillGridContainer(){
         etchContainer.innerHTML="";
         etchContainer.style.gridTemplate = `repeat(${gridPixels}, 1fr) / repeat(${gridPixels}, 1fr)`;
         
-        const gridPixel = document.createElement("DIV");
-        gridPixel.className = 'grid-pixel';
         let i = 0;
         let gridPixelsArray = [];
 
